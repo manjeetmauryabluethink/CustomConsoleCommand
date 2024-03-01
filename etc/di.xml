@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Bluethinkinc\QueueLearning\Api\StudentInterfaceManagementInterface" type="Bluethinkinc\QueueLearning\Model\StudentInterfaceManagement"/>
+	<preference for="Bluethinkinc\QueueLearning\Api\StudentRepositoryInterface" type="Bluethinkinc\QueueLearning\Model\StudentRepository"/>
+	<preference for="Bluethinkinc\QueueLearning\Api\Data\StudentInterface" type="Bluethinkinc\QueueLearning\Model\Student"/>
+	<preference for="Bluethinkinc\QueueLearning\Api\Data\StudentSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Bluethinkinc\QueueLearning\Model\ResourceModel\Student\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethinkinc_queuelearning_student</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethinkinc\QueueLearning\Model\ResourceModel\Student\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="bluethinkinc_queuelearning_student_listing_data_source" xsi:type="string">Bluethinkinc\QueueLearning\Model\ResourceModel\Student\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	  <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="bluethinkinc_queuelearning" xsi:type="object">Bluethinkinc\QueueLearning\Console\Command\ConsoleCommand</item>
+				<item name="custom_command" xsi:type="object">Bluethinkinc\QueueLearning\Console\Command\CustomCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

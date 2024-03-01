@@ -1,0 +1,17 @@
+<?php
+
+namespace Bluethinkinc\QueueLearning\Model\Consumer;
+
+use Bluethinkinc\QueueLearning\Api\Data\StudentInterface;
+
+class StudentConsumer
+{
+    
+    /**
+     * @param StudentInterface $student
+     */
+    public function processMessage(StudentInterface $student): void
+    {
+        
+    }
+}

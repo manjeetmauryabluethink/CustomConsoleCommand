@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="bluethinkinc_queuelearning_student" resource="default" engine="innodb" comment="bluethinkinc_queuelearning_student Table">
+		<column xsi:type="int" name="student_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="student_id"/>
+		</constraint>
+		<column name="stu_name" nullable="true" xsi:type="text" comment="stu_name"/>
+		<column name="stu_email" nullable="true" xsi:type="text" comment="stu_email"/>
+		<column xsi:type="text" name="status" nullable="false" comment="status"/>
+	</table>
+</schema>

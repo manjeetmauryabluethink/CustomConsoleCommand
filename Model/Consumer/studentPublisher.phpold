@@ -1,0 +1,31 @@
+<?php
+
+namespace Bluethinkinc\QueueLearning\Model\Consumer;
+
+use Magento\Framework\MessageQueue\PublisherInterface ;
+use Bluethinkinc\QueueLearning\Api\Data\StudentInterface;
+
+class studentPublisher
+{
+    
+    const TOPIC_NAME = 'devhooks.custom.queue.topic.name';
+
+    /**
+     * @var \Magento\Framework\MessageQueue\PublisherInterface
+     */
+    private $publisher;
+
+    /**
+     * @param \Magento\Framework\MessageQueue\PublisherInterface $publisher
+     */
+    public function __construct(PublisherInterface $publisher)
+    {
+        $this->publisher = $publisher;
+    }
+
+
+    public function execute(StudentInterface $student)
+    {
+        $this->publisher->publish(self::TOPIC_NAME, $student);
+    }
+}

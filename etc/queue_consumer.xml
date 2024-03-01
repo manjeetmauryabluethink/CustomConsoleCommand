@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="salesforce.queue.order"
+              queue="salesforce.queue.order"
+              connection="db"
+              handler="Bluethinkinc\QueueLearning\Model\Consumer::process"/>
+</config>

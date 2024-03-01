@@ -1,0 +1,14 @@
+{
+    "bluethinkinc_queuelearning_student": {
+        "column": {
+            "student_id": true,
+            "stu_name": true,
+            "stu_email": true,
+            "new": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
